@@ -1,0 +1,34 @@
+#doodle game
+import string
+import random
+symbols=list(string.ascii_letters)
+box1=[0]*5
+box2=[0]*5
+pos1=random.randint(0,4)
+pos2=random.randint(0,4)
+samesymbol=random.choice(symbols)
+symbols.remove(samesymbol)
+if (pos1==pos2):
+  box1[pos1]=samesymbol
+  box2[pos1]=samesymbol
+else:
+  box1[pos1]=samesymbol
+  box2[pos2]=samesymbol 
+i=0
+while(i<5):
+  if(i!=pos1 and i!=pos2):
+    alphabet1=random.choice(symbols)
+    symbols.remove(alphabet1)
+    alphabet2=random.choice(symbols)
+    symbols.remove(alphabet2)
+    box1[i]=alphabet1
+    box2[2]=alphabet2
+  i=i+1  
+print(box1)
+print(box2)
+a=input('find the common alphabet:')
+if (a==samesymbol):
+  print("wow!!! you said correct")
+else:
+  print('OOPS better luck next time') 
+  
