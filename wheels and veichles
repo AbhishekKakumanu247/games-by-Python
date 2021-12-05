@@ -1,0 +1,13 @@
+w=int(input('enter total no whells available : '))
+Vtotal=int(input('enter total no of veichels required : '))
+x=Vtotal
+V2=0
+v4=0
+for V2 in range(Vtotal+1):
+  V4=x-V2
+  if (4*V4+2*V2==w):
+    print(V2,'two wheelers')
+    print(V4,'four wheelers')
+    break
+  else :
+    pass  
