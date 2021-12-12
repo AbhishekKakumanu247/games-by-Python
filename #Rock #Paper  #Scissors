@@ -1,0 +1,25 @@
+import random
+var=('r','p','c','r','p','c','r','p','c','r','p','c')
+p1=input('enter your name')
+print('hello',p1,'welcome to ROCK PAPER SICCORS game')
+pp1=0
+pp2=0
+print('r for ROCK ')
+print('p for PAPER')
+print('s for SCISSORS')
+for i in range(0,10):
+  opt=input('your option : ')
+  opt2=random.choice(var)
+  if ((opt=='r' and opt2=='p')or(opt=='p' and opt2=='s') or (opt=='s' and opt2=='r')):
+    pp2=pp2+1
+  elif((opt2=='r' and opt=='p')or(opt2=='p' and opt=='s') or (opt2=='s' and opt=='r')):
+    pp1=pp1+1
+  else:
+    print('both of you entered same')
+  print(p1,'   bot')
+  print(pp1,'       ',pp2)  
+  if(pp1>4):
+    print(p1,'won the game')
+    break
+  if(pp2>4):
+    print('you lost the game')
