@@ -1,0 +1,75 @@
+def mark_to_points(mark):
+  for i in range(0,len(mark)): 
+    if (mark[i]>=90):
+      mark[i]=10
+    elif ((mark[i]>=80 and mark[i]<90)):
+      mark[i]=9
+    elif ((mark[i]>=70 and mark[i]<80)):
+      mark[i]=8
+    elif ((mark[i]>=60 and mark[i]<70)):
+      mark[i]=7
+    elif ((mark[i]>=50 and mark[i]<60)):
+      mark[i]=6
+    elif ((mark[i]>=40 and mark[i]<50)):
+      mark[i]=5
+    else :
+      mark[i]=0     
+  return mark    
+
+def grade_to_points(mark):
+  for i in range(0,len(mark)):   
+    if ( mark[i]=='a+'):
+      mark[i]=10
+    elif (mark[i]=='a'):
+      mark[i]=9
+    elif (mark[i]=='b'):
+      mark[i]=8
+    elif (mark[i]=='c'):
+      mark[i]=7
+    elif (mark[i]=='d'):
+      mark[i]=6
+    elif (mark[i]=='e'):
+      mark[i]=5
+    else :
+      mark[i]=0  
+    
+  return mark    
+  
+print('marks or grade ')
+typ=input('if marks "m" or if grade "g" :')
+subs=int(input('enter no of subjects'))
+labs=int(input('enter no of labs'))
+sub=[]
+lab=[]
+if (typ=='m'):
+  sub_mark=[]
+  lab_mark=[]
+  for i in range(1,subs+1):
+    print('enter marks of subject',i)
+    temp=int(input())
+    sub_mark.append(temp)
+  for i in range(1,labs+1):
+    print('enter marks of lab',i)
+    temp=int(input())
+    lab_mark.append(temp)
+  sub,lab=mark_to_points(sub_mark),mark_to_points(lab_mark)  
+if (typ=='g'):
+  sub_mark=[]
+  lab_mark=[]
+  for i in range(1,subs+1):
+    print('enter grade of subject',i)
+    temp=(input())
+    sub_mark.append(temp)
+  for i in range(1,labs+1):
+    print('enter grade of lab',i)
+    temp=(input())
+    lab_mark.append(temp)
+  sub,lab=grade_to_points(sub_mark),grade_to_points(lab_mark)
+gpa,sum=0,0
+for i in range(0,len(sub)):
+  sum=sum+(3*sub[i])
+for i in range(0,len(lab)):
+  sum=sum+(2*lab[i])  
+cred=30*len(sub)+20*len(lab)
+gpa=(sum/cred)*9.5
+print('your gpa is ',gpa)
