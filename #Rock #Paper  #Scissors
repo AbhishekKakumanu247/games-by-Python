@@ -2,11 +2,8 @@ import random
 var=('r','p','c','r','p','c','r','p','c','r','p','c')
 p1=input('enter your name')
 print('hello',p1,'welcome to ROCK PAPER SICCORS game')
-pp1=0
-pp2=0
-print('r for ROCK ')
-print('p for PAPER')
-print('s for SCISSORS')
+pp1,pp2=0,0
+print('r for ROCK\np for PAPER\ns for SCISSORS')
 for i in range(0,10):
   opt=input('your option : ')
   opt2=random.choice(var)
@@ -23,3 +20,4 @@ for i in range(0,10):
     break
   if(pp2>4):
     print('you lost the game')
+    break
