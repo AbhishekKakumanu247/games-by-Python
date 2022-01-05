@@ -1,0 +1,26 @@
+import turtle
+abhi=turtle.Turtle()
+abhi.color('red')
+abhi.back(100)
+abhi.color('black')
+abhi.fillcolor('red')
+abhi.begin_fill()
+abhi.penup()
+abhi.pendown()
+abhi.forward(1)
+abhi.left(310)
+abhi.forward(200)
+abhi.left(100)
+abhi.forward(200)
+i=200
+while(i!=0):
+  abhi.forward(1.31)
+  abhi.left(1)
+  i=i-1
+abhi.right(130)
+i=185
+while(i!=0):
+  abhi.forward(1.31)
+  abhi.left(1)
+  i=i-1
+abhi.end_fill()
