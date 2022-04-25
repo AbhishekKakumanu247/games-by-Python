@@ -4,15 +4,19 @@ for i in a[:]:
     if i in b:
         a.remove(i)
         b.remove(i)
-c=len(a)+len(b)
-print(a)
-print(b)
-print(c)
-d=['f','l','a','m','e','s']
+y=len(a)+len(b)
+d=['friend','lover','attraction','marriage','enemy','sister']
 while(len(d)>1):
-    x=c% len(d)
+    k=[]
+    x=y% len(d)
     d.pop(x-1)
-n=d[0]
-print(n)
-e={'f':'friend','l':'lover','a':'attraction','m':'marriage','e':'enemy','s':'sister'}
-print(e[n])
+    if(x==0):
+        k=d
+    else:
+        for i in range(x-1,len(d)):
+            k.append(d[i])
+        z=0
+        for i in range(0,(x-1)):
+            k.append(d[i])
+    d=k
+print(*k)
